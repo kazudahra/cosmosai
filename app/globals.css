@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { background: #F4F5F1; }
+  body { @apply bg-paper text-ink antialiased; }
+  :focus-visible { outline: 2px solid #0F5E63; outline-offset: 2px; }
+  input, select, textarea { @apply rounded-md border border-line bg-white px-2.5 py-1.5 text-sm text-ink placeholder:text-ink-faint; }
+  input:focus, select:focus, textarea:focus { @apply border-brand outline-none ring-2 ring-brand/20; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-50; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-brand-dark; }
+  .btn-ghost { @apply btn border border-line bg-white text-ink hover:bg-paper; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
